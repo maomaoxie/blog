@@ -1,0 +1,73 @@
+{
+	// Place your blog workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"codeblock": {
+		"prefix": ["-hcode"],
+		"body": [
+			"{% codeblock ${1:輸入title} lang:JavaScript %}",
+			"${2:輸入code}",
+			"{% endcodeblock %}"
+		],
+		"description": "Minos theme codeblock"
+	},
+	"image": {
+		"prefix": ["-himg"],
+		"body": [
+			"{% img /images/${1:輸入圖片資料夾名稱}/0.png 800 200 ${2:輸入圖片資料夾名稱} %}",
+		],
+		"description": "Minos theme codeblock"
+	},
+	"blockquote": {
+		"prefix": ["-hblok"],
+		"body": [
+			"{% blockquote %}",
+			"${1:輸入blockquote}",
+			"{% endblockquote %}",
+		],
+		"description": "Minos theme blockquote"
+	},
+	"dangerColorquote": {
+		"prefix": ["-hcolord"],
+		"body": [
+			"{% colorquote danger %}",
+			"${1:輸入colorquote}",
+			"{% endcolorquote %}",
+		],
+		"description": "Minos theme color blockquote"
+	},
+	"infoColorquote": {
+		"prefix": ["-hcolori"],
+		"body": [
+			"{% colorquote info %}",
+			"${1:輸入colorquote}",
+			"{% endcolorquote %}",
+		],
+		"description": "Minos theme color blockquote"
+	},
+	"table": {
+		"prefix": ["-htable"],
+		"body": [
+			"| ${1:輸入table}     | ${2:輸入table}     | ${3:輸入table}   |",
+			"| :----------------- | ----------------: | :--------------:  |",
+			"| ${4:輸入table}     |${5:輸入table}      |${6:輸入table}    |",
+			"| ${7:輸入table}     |${8:輸入table}      |${9:輸入table}    |",
+			"| ${10:輸入table}    |${11:輸入table}     |${12:輸入table}   |"
+		],
+		"description": "Minos theme table"
+	},
+}
