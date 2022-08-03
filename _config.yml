@@ -113,7 +113,7 @@ theme: minos
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://maomaoxie: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@github.com/maomaoxie/maomaoxie.github.io.git
+  repo: https://maomaoxie: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@github.com/maomaoxie/maomaoxie.github.io.git
   branch: master
 
 # Website's icon url.
