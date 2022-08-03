@@ -1,38 +1,7 @@
 ---
 title: 關於我
 ---
-熱愛平面設計與貓咪的前端蔡蔡子，仍在前端的路上努力中。
 
-<!-- ## Quick Start
-
-### Create a new post
-
-``` bash
-$ hexo new "My New Post"
-```
-
-More info: [Writing](https://hexo.io/docs/writing.html)
-
-### Run server
-
-``` bash
-$ hexo server
-```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html) -->
+{% img /images/about.jpg 300 200 mawchu 毛球 %}
+我叫毛球（Mawchu），本名謝佳芳。
+是一位熱愛平面設計與貓咪的前端工程練習生，喜歡思考程式邏輯與流程優化，仍在前端的路上努力不懈中！！
