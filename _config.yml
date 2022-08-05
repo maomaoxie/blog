@@ -12,6 +12,7 @@ language:
 - zh-tw
 - en
 timezone: ''
+rss: /atom.xml
 
 # Sitemap
 # sitemap:
@@ -113,8 +114,26 @@ theme: minos
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://maomaoxie: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@github.com/maomaoxie/maomaoxie.github.io.git
+  repo: https://maomaoxie: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@github.com/maomaoxie/maomaoxie.github.io.git
   branch: master
 
 # Website's icon url.
 favicon: /favicon.svg
+
+feed:
+    limit: 20
+    order_by: "-date"
+    tag_dir: "tag"
+    category_dir: "category"
+    rss:
+        enable: true
+        template: "themes/layout/template/rss.ejs"
+        output: "rss.xml"
+    atom:
+        enable: true
+        template: "themes/layout/template/atom.ejs"
+        output: "atom.xml"
+    jsonFeed:
+        enable: true
+        template: "themes/layout/template/json.ejs"
+        output: "feed.json"

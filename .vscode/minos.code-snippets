@@ -18,6 +18,7 @@
 
 	"codeblock": {
 		"prefix": ["-hcode"],
+		"scope": "javascript,typescript,markdown",
 		"body": [
 			"{% codeblock ${1:輸入title} lang:JavaScript %}",
 			"${2:輸入code}",
