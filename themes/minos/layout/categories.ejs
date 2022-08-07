@@ -1,0 +1,27 @@
+<section class="section section-heading">
+    <div class="container">
+        <div class="content">
+            <h5>
+                <i class="fas fa-folder"></i>
+                <span style="margin-left: 3px"><%= __('common.categories') %></span>
+            </h5>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <div class="columns is-variable is-1 is-multiline is-mobile">
+            <% (page._categories || page.categories).forEach(category => {%>
+            <span class="column is-narrow">
+                <a class="tag is-light article-tag" href="<%= url_for(category.path) %>">
+                    <i class="fas fa-folder"></i>
+                    <span style="margin-left: 3px">
+                        <%= category.name %>
+                    </span>
+                    <span style="font-size: 5px;">&nbsp;(<%= category.posts.length%>)</span>
+                </a>
+            </span>
+            <% }) %>
+        </div>
+    </div>
+</section>
