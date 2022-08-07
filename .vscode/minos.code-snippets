@@ -60,15 +60,12 @@
 		],
 		"description": "Minos theme color blockquote"
 	},
-	"table": {
-		"prefix": ["-htable"],
+	"url": {
+		"prefix": ["-hurl"],
 		"body": [
-			"| ${1:輸入table}     | ${2:輸入table}     | ${3:輸入table}   |",
-			"| :----------------- | ----------------: | :--------------:  |",
-			"| ${4:輸入table}     |${5:輸入table}      |${6:輸入table}    |",
-			"| ${7:輸入table}     |${8:輸入table}      |${9:輸入table}    |",
-			"| ${10:輸入table}    |${11:輸入table}     |${12:輸入table}   |"
+			"[${1:輸入url title}](https://${2:輸入url})",
 		],
-		"description": "Minos theme table"
+		"description": "Minos theme url"
 	},
+	""
 }

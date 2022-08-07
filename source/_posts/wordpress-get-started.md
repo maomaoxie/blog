@@ -43,7 +43,7 @@ wordpress 可以當作是一個 php 建構而成的後端框架應用，串接�
 
 要注意的是 wordpress 權限身分須從 root 改成 www-data，才能變成網站系統管理員使用 wordpress 後台。
 
-行情 $ 25000 (使用佈景主題)
+<!-- 行情 $ 25000 (使用佈景主題)
 客製化算一頁
 定時備份以免網站被駭客
 租 GCP 靜態硬碟 
@@ -61,4 +61,4 @@ duplicate page
 報價高一點
 附加的css
 減少做重複的事情
-在 wordpress 上做前後端分離
+在 wordpress 上做前後端分離 -->
