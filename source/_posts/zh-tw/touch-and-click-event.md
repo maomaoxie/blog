@@ -1,5 +1,5 @@
 ---
-title: touch-and-click-event
+title: touch 與 click 事件
 date: 2022-09-14 09:38:48
 tags:
 categories:
@@ -42,3 +42,14 @@ Fired when a pointer is no longer active buttons state.
 A browser fires this event if it concludes the pointer will no longer be able to generate events
 (for example the related device is deactivated).
 當裝置因設置關閉觸控等原因無法觸發 pointer 事件時，瀏覽器會偵測並觸發．
+
+### pointerout
+Fired for several reasons including: pointer is moved out of the hit test boundaries of an element;
+firing the pointerup event for a device that does not support hover (see pointerup);
+after firing the pointercancel event (see pointercancel); when a pen stylus leaves the hover range detectable by the digitizer.
+當手指從裝置面板移開時觸發，亦會同時觸發 pointerup 事件；在 pointercancel 事件完成後也會觸發；當觸控筆離開裝置可偵測的範圍內也會觸發．
+
+### pointerleave
+Fired when a pointer is moved out of the hit test boundaries of an element.
+For pen devices, this event is fired when the stylus leaves the hover range detectable by the digitizer.
+跟上面很像，只是不會觸發 pointerup；在 pointercancel 事件完成後不會觸發．
