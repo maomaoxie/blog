@@ -2,7 +2,8 @@
 title: 克服 Javascript 的奇怪部分 運算子的相依性與優先性
 date: 2022-09-21 14:58:56
 tags:
-categories:
+- Javascript
+categories: javascript
 ---
 
 在了解以下的特性以前需要知道，JavaScript 是 syncrounous 同步在執行一個表達式的，
@@ -46,8 +47,14 @@ console.log(c); // 4
 `a = b = c;` 表達式會先執行 `b = 4`，並且回傳 4 之後執行 `a = 4`。
 
 # 大括號（parentheses）最優先
+{% img /images/js-weird-parts-operators-precendence-and-associactivity/2.png 800 200 js-weird-parts-operators-precendence-and-associactivity %}
 當一個表達式中具有多個運算子，大括號（parentheses）裡的運算會最優先：
 {% codeblock lang:JavaScript %}
 var a = (3 + 4) * 5;
 console.log(a); // 35
 {% endcodeblock %}
+
+# && || 優先性（precedence）比較
+{% img /images/js-weird-parts-operators-precendence-and-associactivity/3.png 800 200 js-weird-parts-operators-precendence-and-associactivity %}
+在判斷式中經常同時使用 &&（and）與 ||（or），需要特別注意 &&（and）優先級是大於 ||（or）的，
+不過若專案中有使用到 eslint 則會提示盡量補上大括號（parentheses），來協助辨認次序唷！
