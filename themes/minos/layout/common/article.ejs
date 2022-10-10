@@ -80,12 +80,16 @@
     <div class="columns is-mobile is-multiline article-nav">
         <span class="column is-12-mobile is-half-desktop <%= !post.prev ? 'is-hidden-mobile' : '' %> article-nav-prev">
             <% if (post.prev){ %>
-            <a href="<%- url_for(post.prev.path) %>"><%= post.prev.title %></a>
+            <a href="<%- url_for(post.prev.path) %>">
+                <i class="fas fa-caret-left" style="padding-right: 5px"></i> <%= post.prev.title %>
+            </a>
             <% } %>
         </span>
         <span class="column is-12-mobile is-half-desktop <%= !post.next ? 'is-hidden-mobile' : '' %> article-nav-next">
             <% if (post.next){ %>
-            <a href="<%- url_for(post.next.path) %>"><%= post.next.title %></a>
+            <a href="<%- url_for(post.next.path) %>">
+                <%= post.next.title %> <i class="fas fa-caret-right" style="padding-left: 5px"></i>
+            </a>
             <% } %>
         </span>
     </div>
