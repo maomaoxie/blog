@@ -40,8 +40,23 @@ console.log(Number(false)); // 0
 {% endcodeblock %}
 `0 < 1` 獲得 true。
 
-# 善用嚴格等式（triple equal）
-雙等號會造成嚴重的動態型別轉換，引發不可預期的後果，例如以下的範例：
+# 強制型轉
+型轉分為主動式強制型轉（Explicit Coercion）與被動式隱式型轉（Implicit Coercion），強制型轉有幾個基本型：
+1. toString
+2. toNumber
+3. toBoolean
+4. toPrimitive
+
+### toNumber 數字型轉範例
+以下是幾個特殊的案例：
+{% codeblock lang:JavaScript %}
+Number(Undefined); // NaN
+Number(null); // 0
+{% endcodeblock %}
+
+
+### 雙等號型轉的悲劇
+雙等號（double Equality）會造成嚴重的動態型別轉換，引發不可預期的後果，例如以下的範例：
 {% codeblock lang:JavaScript %}
 false == 0; // true
 null == 0; // true
@@ -49,13 +64,39 @@ null < 1; // true
 "" == 0; // true
 "" < 1; // true
 {% endcodeblock %}
+
+#### 動態型別呼叫的包裹器？
+Javascript 引擎在型別轉換背後做了許多事情，但也非沒有規則可循，
 以下的範例是 JavaScript 最難以理解的一部分型別轉換：
+
+##### 比較運算子呼叫 toString
 {% codeblock lang:JavaScript %}
 [] == false; // true
 Boolean([]); // true
 {% endcodeblock %}
-這實在是太詭異了!!不過理解一下背後的原理，當 Array 拿去比較 value 的時候，toString 包裹器會被呼叫：
+
+這實在是太詭異了!!不過理解一下背後的原理，「當 Array 拿去比較 value 的時候，toString 包裹器會被呼叫，而不是透過　Boolean 轉換」：
 {% codeblock lang:JavaScript %}
 String([]); // ''
 '' == false; // true
 {% endcodeblock %}
+
+### 有趣的 [object object]
+在開發過程查詢 error 或其他型轉情境經常會看見或 alert 噴出 `[object object]` 這類特殊的值，剖析一下出現的原理：
+
+#### 型轉造成的 [object object]
+{% codeblock lang:JavaScript %}
+[] + {}; // '[object object]'
+{} + []; // 0
+{% endcodeblock %}
+第一個例子 `[] + {};`，這是由於 `[]` + 號型轉為空字串 `''`，而 `{}` + 號型轉為 '[object object]' 了；String() 直接調用 `.toString` 方法來轉換 `[]`。
+
+第二個例子 `{} + []` 中， `{}`被當作空區塊無作用，只會運算後方的 ` + []` 調用 `Number([])`，
+依據型轉規則，陣列屬於物件型別所以型轉數字時會調用 toString 方法來型轉成空字串 `String([])` 獲得 `''`，也就是 Number('')，
+而獲得 0 的結果。
+{% colorquote danger %}
+值得注意的是 block `{}` 放置在最前方會被為 Javascript 引擎視作作用域而非空物件!
+{% endcolorquote %}
+
+### 善用嚴格等式（Tripple Equality）
+不同於雙等號造成的型轉悲劇，三等號可以確保最後獲得的比較結果不會被型轉，也能達到預期的值做開發判斷，是比較良好的開發習慣。
