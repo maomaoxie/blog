@@ -78,7 +78,7 @@ Javascript function 的靜態物理坐落位置（physical position）深深影�
     }
 
     var buyToyToGalMary = createGal ('Mary');
-    buyToyToGalMary('玩具熊');
+    buyToyToGalMary('玩具熊'); 
     buyToyToGalMary('洋娃娃');
     buyToyToGalMary('吹泡泡');
 
@@ -86,3 +86,6 @@ Javascript function 的靜態物理坐落位置（physical position）深深影�
     buyToyToGalAda('小火車');
     buyToyToGalAda('佩佩豬');
 {% endcodeblock %}
+
+執行結果：
+{% img /images/js-weird-parts-closure/1.png 350 200 js-weird-parts-closure %}
