@@ -224,14 +224,18 @@ a.tag.article-tag {
     .article-entry {
         margin-bottom: 3rem;
         h1, h2, h3, h4, h5, h6 {
+            margin-top: 2rem;
             cursor: pointer;
             position: relative;
-
             &:hover:before {
                 content: '#';
                 position: absolute;
                 right: 100%;
             }
+        }
+
+        p {
+            margin-bottom: .8rem;
         }
 
         a {
@@ -569,6 +573,10 @@ code, pre {
     font-family: $family-mono;
     color: $main-color-darken;
     font-weight: bold;
+}
+
+code {
+    background: rgba(0,0,0,0.05);
 }
 
 figure.highlight {

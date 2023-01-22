@@ -2,7 +2,7 @@
     <div class="container">
     <% const groups = {};
     const years = [];
-    page.posts.each(post => {
+    page.posts && page.posts.each(post => {
         const year = post.date.year();
         if (typeof(groups[year]) === 'undefined') {
             groups[year] = [];

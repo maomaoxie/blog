@@ -217,6 +217,7 @@ a.tag.article-tag:hover {
 }
 
 .article .article-entry h1, .article .article-entry h2, .article .article-entry h3, .article .article-entry h4, .article .article-entry h5, .article .article-entry h6 {
+  margin-top: 2rem;
   cursor: pointer;
   position: relative;
 }
@@ -225,6 +226,10 @@ a.tag.article-tag:hover {
   content: '#';
   position: absolute;
   right: 100%;
+}
+
+.article .article-entry p {
+  margin-bottom: .8rem;
 }
 
 .article .article-entry a {
@@ -254,10 +259,6 @@ a.tag.article-tag:hover {
 
 .article .article-nav .article-nav-next {
   text-align: right;
-}
-
-.article .article-nav .article-nav-next a {
-  padding-right: 1rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -555,6 +556,10 @@ code, pre {
   font-family: "Source Code Pro", monospace, "Microsoft YaHei";
   color: #ffbb00;
   font-weight: bold;
+}
+
+code {
+  background: rgba(0, 0, 0, 0.05);
 }
 
 figure.highlight {
